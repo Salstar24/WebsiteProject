@@ -13,6 +13,7 @@ class BananaControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/bananas');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        $this->assertContains('Lucky number:', $crawler->filter('html')->text());
+        $this->assertContains('Lucky', $crawler->filter('html')->text());
+        $this->assertContains('number:', $crawler->filter('html')->text());
     }
 }
